@@ -1,1 +1,23 @@
-<html><head><title>Sample Website</title></head><body><h1>Sample Website</h1><p>Demo by me</p></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Azure Static Web App Authentication</title>
+</head>
+<body>
+    <h1>Welcome to Azure Static Web App</h1>
+    <button onclick="login()">Login with GitHub</button>
+    <button onclick="logout()">Logout</button>
+
+    <script>
+        function login() {
+            window.location.href = '/.auth/login/github';
+        }
+
+        function logout() {
+            window.location.href = '/.auth/logout';
+        }
+    </script>
+</body>
+</html>

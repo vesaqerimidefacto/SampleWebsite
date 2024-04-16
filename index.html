@@ -3,19 +3,21 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Azure Static Web App Authentication</title>
+<title>Azure Static Web App Authentication with AAD</title>
 </head>
 <body>
     <h1>Welcome to Azure Static Web App</h1>
-    <button onclick="login()">Login with GitHub</button>
+    <button onclick="login()">Login with Azure AD</button>
     <button onclick="logout()">Logout</button>
 
     <script>
         function login() {
-            window.location.href = '/.auth/login/github';
+            // Redirect to Azure AD login page
+            window.location.href = '/.auth/login/aad';
         }
 
         function logout() {
+            // Redirect to logout page
             window.location.href = '/.auth/logout';
         }
     </script>

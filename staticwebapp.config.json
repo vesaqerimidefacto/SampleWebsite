@@ -1,43 +1,14 @@
 {
     "routes": [
       {
-        "route": "/.auth/login/aad",
-        "serve": "/.auth/login/aad",
-        "statusCode": 401
-      },
-      {
-        "route": "/.auth/logout",
-        "serve": "/.auth/logout",
-        "statusCode": 200
-      },
-      {
-        "route": "/private/*",
+        "route": "/*",
         "allowedRoles": ["authenticated"]
       }
     ],
-    "navigationFallback": {
-      "rewrite": "/index.html",
-      "exclude": ["/images/*.{png,jpg,gif}", "/css/*", "/js/*"]
-    },
     "responseOverrides": {
       "401": {
-        "redirect": "/login",
-        "statusCode": 302
-      }
-    },
-    "auth": {
-      "identityProviders": {
-        "azureActiveDirectory": {
-          "registration": {
-            "openIdIssuer": "https://login.microsoftonline.com/common/v2.0",
-            "clientIdSettingName": "AAD_CLIENT_ID",
-            "clientSecretSettingName": "AAD_CLIENT_SECRET"
-          },
-          "login": {
-            "scopes": ["openid", "profile"]
-          }
-        }
+        "statusCode": 302,
+        "redirect": "/.auth/login/aad"
       }
     }
   }
-  
